@@ -420,6 +420,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Set initial language
     updateLanguage(currentLang);
+
+    // Scroll to top on load to prevent automatic scrolling
+    window.scrollTo(0, 0);
 });
 
 /* ===================================
