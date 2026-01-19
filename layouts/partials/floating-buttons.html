@@ -1,0 +1,19 @@
+<!-- Floating Contact Buttons -->
+<div class="floating-contact-buttons">
+    <div class="floating-btn-wrapper">
+        <div class="floating-tooltip" id="whatsapp-tooltip">{{ i18n "floating.whatsapp" }}</div>
+        <a href="{{ site.Params.business.whatsapp }}" target="_blank" rel="noopener noreferrer"
+            class="floating-btn whatsapp-btn" aria-label='{{ i18n "floating.whatsapp" }}'
+            onmouseenter="showTooltip('whatsapp')" onmouseleave="hideTooltip('whatsapp')">
+            <i data-lucide="message-circle"></i>
+        </a>
+    </div>
+    <div class="floating-btn-wrapper">
+        <div class="floating-tooltip" id="email-tooltip">{{ i18n "floating.email" }}</div>
+        <a href="mailto:{{ site.Params.contact.email }}" class="floating-btn email-btn"
+            aria-label='{{ i18n "floating.email" }}' onmouseenter="showTooltip('email')"
+            onmouseleave="hideTooltip('email')">
+            <i data-lucide="mail"></i>
+        </a>
+    </div>
+</div>

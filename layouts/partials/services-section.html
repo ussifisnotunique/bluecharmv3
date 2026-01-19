@@ -1,0 +1,61 @@
+<!-- Services Section -->
+<section id="services" class="services-section fade-in-section">
+    <div class="services-bg-decoration"></div>
+
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag-text">{{ i18n "services.tagline" }}</span>
+            <h2 class="section-title">{{ i18n "services.title" }}</h2>
+        </div>
+
+        <!-- Trips -->
+        <div class="services-category">
+            <h3 class="services-category-title">{{ i18n "services.tripsTitle" }}</h3>
+            <div class="services-grid trips-grid">
+                {{ range $index, $trip := site.Data.services.trips }}
+                <div class="service-card" id="trip-{{ $index }}">
+                    <img src="{{ $trip.image }}"
+                        alt="{{ i18n $trip.title }} - Scuba diving and snorkeling in Hurghada with Bluecharm diving center"
+                        loading="lazy" class="service-card-image">
+                    <div class="service-card-content">
+                        <div class="service-card-body">
+                            <h3 class="service-card-title">{{ i18n $trip.title }}</h3>
+                            <div class="service-card-price">{{ $trip.price }}</div>
+                            <p class="service-card-description">{{ i18n $trip.desc }}</p>
+                        </div>
+                        <a href="#booking" class="service-card-btn"
+                            data-program="{{ i18n $trip.title }} - {{ $trip.price }}">
+                            {{ i18n "services.bookNow" }}
+                        </a>
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+
+        <!-- Courses -->
+        <div class="services-category">
+            <h3 class="services-category-title">{{ i18n "services.coursesTitle" }}</h3>
+            <div class="services-grid courses-grid">
+                {{ range $index, $course := site.Data.services.courses }}
+                <div class="service-card" id="course-{{ $index }}">
+                    <img src="{{ $course.image }}"
+                        alt="{{ i18n $course.title }} - Scuba diving and snorkeling in Hurghada with Bluecharm diving center"
+                        loading="lazy" class="service-card-image">
+                    <div class="service-card-content">
+                        <div class="service-card-body">
+                            <h3 class="service-card-title">{{ i18n $course.title }}</h3>
+                            <div class="service-card-price">{{ $course.price }}</div>
+                            <p class="service-card-description">{{ i18n $course.desc }}</p>
+                        </div>
+                        <a href="#booking" class="service-card-btn"
+                            data-program="{{ i18n $course.title }} - {{ $course.price }}">
+                            {{ i18n "services.bookNow" }}
+                        </a>
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</section>

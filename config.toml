@@ -1,0 +1,29 @@
+baseURL = "https://bluecharmv2.netlify.app/"
+defaultContentLanguage = "en"
+title = "Bluecharm Diving Center - Scuba Diving Hurghada"
+defaultContentLanguageInSubdir = true
+enableRobotsTXT = true
+
+[languages]
+[languages.en]
+languageName = "English"
+weight = 1
+[languages.de]
+languageName = "Deutsch"
+weight = 2
+[languages.pl]
+languageName = "Polski"
+weight = 3
+[languages.ru]
+languageName = "Русский"
+weight = 4
+
+[params]
+  [params.contact]
+    phone = "+20 106 594 0203"
+    email = "mohamed.ismail6862@icloud.com"
+  [params.business]
+    name = "Bluecharm"
+    facebook = "https://www.facebook.com/mohamed.shaapan.7146"
+    instagram = "https://www.instagram.com/blue_charm_red_sea_diving/"
+    whatsapp = "https://wa.me/201065940203"

@@ -1,0 +1,14 @@
+<!-- Language Selector -->
+<div class="language-selector{{ if .mobile }} mobile{{ end }}">
+    <button class="language-btn" id="language-btn{{ if .mobile }}-mobile{{ end }}" aria-haspopup="menu"
+        aria-expanded="false">
+        <i data-lucide="globe"></i>
+        <span id="current-language{{ if .mobile }}-mobile{{ end }}">Language</span>
+    </button>
+    <div class="language-menu" id="language-menu{{ if .mobile }}-mobile{{ end }}" role="menu">
+        <a href="/en/" class="language-option"><span class="flag">🇺🇸</span> English</a>
+        <a href="/de/" class="language-option"><span class="flag">🇩🇪</span> Deutsch</a>
+        <a href="/pl/" class="language-option"><span class="flag">🇵🇱</span> Polski</a>
+        <a href="/ru/" class="language-option"><span class="flag">🇷🇺</span> Русский</a>
+    </div>
+</div>

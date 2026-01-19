@@ -25,6 +25,15 @@
     --white: #ffffff;
     --black: #000000;
 
+    /* Shadows */
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+    /* Transitions and Transforms */
+    --transition: all 0.3s ease;
+    --transform-hover: scale(1.05);
+    --transform-active: scale(0.95);
+
     /* Fonts */
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.5;
@@ -43,7 +52,6 @@ html {
 }
 
 body {
-    margin: 0;
     min-width: 320px;
     min-height: 100vh;
     overflow-x: hidden;
@@ -63,7 +71,6 @@ img {
 }
 
 button {
-    font-family: inherit;
     cursor: pointer;
     border: none;
     background: none;
@@ -71,9 +78,7 @@ button {
 
 input,
 select,
-textarea {
-    font-family: inherit;
-}
+textarea {}
 
 .sr-only {
     position: absolute;
@@ -202,7 +207,7 @@ textarea {
     color: var(--white);
     padding: 0.5rem 1rem;
     border-radius: 0.75rem;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow: var(--shadow-lg);
     white-space: nowrap;
     font-weight: 700;
     font-size: 0.875rem;
@@ -224,8 +229,8 @@ textarea {
     width: 3.5rem;
     height: 3.5rem;
     border-radius: 50%;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    transition: all 0.3s ease;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
 }
 
 .floating-btn:hover {
@@ -233,7 +238,7 @@ textarea {
 }
 
 .floating-btn:active {
-    transform: scale(0.95);
+    transform: var(--transform-active);
 }
 
 .whatsapp-btn {
@@ -311,7 +316,7 @@ textarea {
     position: fixed;
     width: 100%;
     z-index: 50;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     left: 0;
     top: 0;
     background-color: transparent;
@@ -320,7 +325,7 @@ textarea {
 
 .navbar.scrolled {
     background-color: var(--blue-950);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-md);
     padding: 0.5rem 0;
 }
 
@@ -411,7 +416,7 @@ textarea {
     text-transform: uppercase;
     font-size: 0.875rem;
     letter-spacing: 0.05em;
-    transition: all 0.3s ease;
+    transition: var(--transition);
 }
 
 .nav-link:hover {
@@ -420,7 +425,7 @@ textarea {
 }
 
 .nav-link:active {
-    transform: scale(0.95);
+    transform: var(--transform-active);
 }
 
 .btn-primary {
@@ -429,22 +434,22 @@ textarea {
     font-weight: 500;
     text-transform: uppercase;
     font-size: 0.875rem;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     cursor: pointer;
     background-color: var(--cyan-500);
     color: var(--white);
     border-radius: 0.5rem;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-md);
 }
 
 .btn-primary:hover {
     background-color: var(--cyan-600);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    transform: scale(1.05);
+    box-shadow: var(--shadow-lg);
+    transform: var(--transform-hover);
 }
 
 .btn-primary:active {
-    transform: scale(0.95);
+    transform: var(--transform-active);
 }
 
 /* Language Selector Desktop */
@@ -460,8 +465,8 @@ textarea {
     background-color: var(--cyan-600);
     color: var(--white);
     border-radius: 0.5rem;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
     font-weight: 500;
     text-transform: uppercase;
     font-size: 0.875rem;
@@ -469,17 +474,21 @@ textarea {
 
 .language-btn:hover {
     background-color: #0e7490;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    transform: scale(1.05);
+    box-shadow: var(--shadow-lg);
+    transform: var(--transform-hover);
 }
 
 .language-btn:active {
-    transform: scale(0.95);
+    transform: var(--transform-active);
 }
 
 .language-btn svg {
     width: 1rem;
     height: 1rem;
+}
+
+.language-btn span {
+    font-weight: 700;
 }
 
 .language-menu {
@@ -489,7 +498,7 @@ textarea {
     background-color: var(--white);
     border: 1px solid var(--gray-200);
     border-radius: 0.75rem;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow: var(--shadow-lg);
     overflow: hidden;
     min-width: 180px;
     z-index: 50;
@@ -498,6 +507,61 @@ textarea {
     transform: translateY(-10px);
     transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
 }
+
+/* Mobile language menu */
+.language-selector.mobile .language-menu {
+    position: static;
+    transform: none;
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease, max-height 0.2s ease;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    min-width: auto;
+    margin-top: 0.5rem;
+}
+
+.language-selector.mobile .language-menu.show {
+    opacity: 1;
+    visibility: visible;
+    display: block;
+    max-height: 500px;
+    overflow: visible;
+}
+
+.language-selector.mobile .language-btn {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 0.75rem 1rem;
+    background-color: transparent;
+    color: var(--white);
+    border: 1px solid var(--blue-800);
+    border-radius: 0.5rem;
+}
+
+.language-selector.mobile .language-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.language-selector.mobile .language-option {
+    color: var(--white);
+    background-color: transparent;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.language-selector.mobile .language-option:hover {
+    background-color: var(--blue-800);
+    color: var(--cyan-400);
+}
+
+
 
 .language-menu.show {
     opacity: 1;
@@ -511,11 +575,15 @@ textarea {
     text-align: left;
     font-weight: 500;
     color: #1f2937;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 0.75rem;
+}
+
+.flag {
+    font-size: 1.25rem;
 }
 
 .language-option:hover {
@@ -565,10 +633,10 @@ textarea {
     position: absolute;
     left: 0;
     top: 0;
-    height: 100%;
+    min-height: 100vh;
     width: 320px;
     background-color: var(--blue-950);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow: var(--shadow-lg);
     display: flex;
     flex-direction: column;
     transform: translateX(-100%);
@@ -631,13 +699,11 @@ textarea {
 }
 
 .mobile-nav-link:active {
-    transform: scale(0.95);
+    transform: var(--transform-active);
 }
 
 .mobile-language-section {
-    margin-top: 1.5rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--blue-800);
+    margin-top: 1rem;
 }
 
 .mobile-language-section h4 {
@@ -657,7 +723,7 @@ textarea {
     font-weight: 500;
     text-transform: uppercase;
     font-size: 0.875rem;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     cursor: pointer;
     border: none;
 }
@@ -829,7 +895,7 @@ textarea {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     font-size: 0.875rem;
     min-width: 200px;
     text-align: center;
@@ -844,11 +910,11 @@ textarea {
 }
 
 .hero-btn:hover {
-    transform: scale(1.05);
+    transform: var(--transform-hover);
 }
 
 .hero-btn:active {
-    transform: scale(0.95);
+    transform: var(--transform-active);
 }
 
 .hero-btn-primary {
@@ -990,7 +1056,7 @@ textarea {
     position: relative;
     z-index: 10;
     border-radius: 2rem;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow: var(--shadow-lg);
     width: 100%;
     object-fit: cover;
     height: 350px;
@@ -1015,7 +1081,7 @@ textarea {
     background-color: var(--blue-950);
     padding: 1rem 1.5rem;
     border-radius: 0.75rem;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow: var(--shadow-lg);
     z-index: 20;
     max-width: 160px;
 }
@@ -1207,7 +1273,7 @@ textarea {
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     font-size: 0.875rem;
 }
 
@@ -1360,8 +1426,8 @@ textarea {
     background-color: var(--white);
     border: 1px solid var(--blue-100);
     border-radius: 0.5rem;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    transition: all 0.3s ease;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
     min-height: 380px;
     display: flex;
     flex-direction: column;
@@ -1397,7 +1463,7 @@ textarea {
 }
 
 .service-card:hover .service-card-image {
-    transform: scale(1.05);
+    transform: var(--transform-hover);
 }
 
 .service-card-content {
@@ -1470,7 +1536,7 @@ textarea {
     border-radius: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     font-size: 0.875rem;
 }
 
@@ -1482,11 +1548,11 @@ textarea {
 
 .service-card-btn:hover {
     background-color: var(--cyan-600);
-    transform: scale(1.05);
+    transform: var(--transform-hover);
 }
 
 .service-card-btn:active {
-    transform: scale(0.95);
+    transform: var(--transform-active);
 }
 
 /* ===================================
@@ -1658,7 +1724,7 @@ textarea {
     background-color: var(--white);
     border-radius: 1rem;
     padding: 1.5rem;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow: var(--shadow-lg);
 }
 
 @media (min-width: 640px) {
@@ -1787,7 +1853,7 @@ textarea {
     text-transform: uppercase;
     padding: 0.75rem 1rem;
     border-radius: 0.75rem;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     font-size: 0.875rem;
 }
 
@@ -1800,11 +1866,11 @@ textarea {
 
 .btn-submit:hover {
     background-color: var(--cyan-600);
-    transform: scale(1.05);
+    transform: var(--transform-hover);
 }
 
 .btn-submit:active {
-    transform: scale(0.95);
+    transform: var(--transform-active);
 }
 
 /* ===================================

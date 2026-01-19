@@ -1,0 +1,88 @@
+<!-- Booking Section -->
+<section id="booking" class="booking-section fade-in-section">
+    <div class="container">
+        <div class="booking-grid">
+            <!-- Info -->
+            <div class="booking-info">
+                <h2 class="booking-title">
+                    <span>{{ i18n "booking.title1" }}</span>
+                    <br>
+                    <span class="booking-title-accent">{{ i18n "booking.title2" }}</span>
+                </h2>
+                <p class="booking-description">{{ i18n "booking.desc" }}</p>
+
+                <div class="booking-contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i data-lucide="map-pin"></i>
+                        </div>
+                        <div>
+                            <h3 class="contact-label">{{ i18n "booking.location" }}</h3>
+                            <p class="contact-value">{{ i18n "booking.locationValue" }}</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i data-lucide="phone"></i>
+                        </div>
+                        <div>
+                            <h3 class="contact-label">{{ i18n "booking.contact" }}</h3>
+                            <p class="contact-value">{{ site.Params.contact.phone }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <div class="booking-form-wrapper">
+                <h3 class="booking-form-title">{{ i18n "booking.formTitle" }}</h3>
+                <form id="booking-form" class="booking-form">
+                    <label for="name" class="sr-only">{{ i18n "booking.name" }}</label>
+                    <input type="text" id="name" name="name" required placeholder='{{ i18n "booking.name" }}'>
+
+                    <label for="phone" class="sr-only">{{ i18n "booking.phone" }}</label>
+                    <input type="tel" id="phone" name="phone" required placeholder='{{ i18n "booking.phone" }}'>
+
+                    <label for="whatsapp" class="sr-only">{{ i18n "booking.whatsapp" }}</label>
+                    <input type="tel" id="whatsapp" name="whatsapp" required
+                        placeholder='{{ i18n "booking.whatsapp" }}'>
+
+                    <label for="email" class="sr-only">{{ i18n "booking.email" }}</label>
+                    <input type="email" id="email" name="email" required placeholder='{{ i18n "booking.email" }}'>
+
+                    <div class="form-row">
+                        <div class="date-input-wrapper">
+                            <label for="date" class="sr-only">{{ i18n "booking.date" }}</label>
+                            <input type="date" id="date" name="date" required>
+                            <i data-lucide="calendar" class="date-icon"></i>
+                        </div>
+
+                        <label for="program" class="sr-only">{{ i18n "booking.program" }}</label>
+                        <select id="program" name="program" required>
+                            <option value="">{{ i18n "booking.program" }}</option>
+                            {{ range $trip := site.Data.services.trips }}
+                            <option value="{{ i18n $trip.title }} - {{ $trip.price }}">{{ i18n $trip.title }} - {{
+                                $trip.price }}</option>
+                            {{ end }}
+                            {{ range $course := site.Data.services.courses }}
+                            <option value="{{ i18n $course.title }} - {{ $course.price }}">{{ i18n $course.title }} - {{
+                                $course.price }}</option>
+                            {{ end }}
+                        </select>
+                    </div>
+
+                    <textarea id="message" name="message" rows="3"
+                        placeholder='{{ i18n "booking.message" }}'></textarea>
+
+                    <button type="submit" class="btn-submit">{{ i18n "booking.submit" }}</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Notification -->
+    <div id="success-notification" class="success-notification" role="status">
+        <i data-lucide="check"></i>
+        <span>Program updated</span>
+    </div>
+</section>

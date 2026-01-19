@@ -1,0 +1,58 @@
+<!-- Navigation -->
+<nav id="navbar" class="navbar">
+    <div class="nav-container">
+        <div class="nav-content">
+            <!-- Logo -->
+            <div class="nav-logo">
+                <i data-lucide="anchor"></i>
+                <span class="logo-text">DIVING BLUE<span class="logo-accent">CHARM</span></span>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="nav-menu-desktop">
+                <a href="#home" class="nav-link">{{ i18n "nav.home" }}</a>
+                <a href="#about" class="nav-link">{{ i18n "nav.about" }}</a>
+                <a href="#services" class="nav-link">{{ i18n "nav.services" }}</a>
+
+                <!-- Language Selector Desktop -->
+                <div class="language-selector-desktop">
+                    {{ partial "language-selector.html" (dict "mobile" false) }}
+                </div>
+
+                <a href="#booking" class="btn-primary">{{ i18n "nav.booking" }}</a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                <i data-lucide="menu" id="menu-icon"></i>
+                <i data-lucide="x" id="close-icon" style="display: none;"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <div class="nav-logo">
+                    <i data-lucide="anchor"></i>
+                    <span class="logo-text">DIVING BLUE<span class="logo-accent">CHARM</span></span>
+                </div>
+                <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close navigation menu">
+                    <i data-lucide=x></i>
+                </button>
+            </div>
+
+            <div class="mobile-menu-links">
+                <a href="#home" class="mobile-nav-link">{{ i18n "nav.home" }}</a>
+                <a href="#about" class="mobile-nav-link">{{ i18n "nav.about" }}</a>
+                <a href="#services" class="mobile-nav-link">{{ i18n "nav.services" }}</a>
+
+                <!-- Language Selector Mobile -->
+                <div class="mobile-language-section">
+                    {{ partial "language-selector.html" (dict "mobile" true) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

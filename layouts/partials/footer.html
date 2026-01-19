@@ -1,0 +1,34 @@
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-column">
+                <span class="footer-logo">
+                    <span class="logo-text">DIVING BLUE<span class="logo-accent">CHARM</span></span>
+                </span>
+                <p class="footer-description">{{ i18n "footer.desc" }}</p>
+            </div>
+
+            <div class="footer-column">
+                <h3 class="footer-title">{{ i18n "footer.contactTitle" }}</h3>
+                <p class="footer-text"><span>{{ i18n "footer.phone" }}:</span> {{ site.Params.contact.phone }}</p>
+                <p class="footer-text"><span>{{ i18n "footer.email" }}:</span> {{ site.Params.contact.email }}</p>
+                <p class="footer-text"><span>{{ i18n "footer.location" }}:</span> {{ i18n "booking.locationValue" }}</p>
+            </div>
+
+            <div class="footer-column footer-social">
+                <h3 class="footer-title">{{ i18n "footer.followUs" }}</h3>
+                <div class="social-links">
+                    <a href="{{ site.Params.business.facebook }}" target="_blank" rel="noopener noreferrer">Facebook</a>
+                    <a href="{{ site.Params.business.instagram }}" target="_blank"
+                        rel="noopener noreferrer">Instagram</a>
+                    <a href="{{ site.Params.business.whatsapp }}" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="footer-copyright">{{ i18n "footer.copyright" }}</p>
+        </div>
+    </div>
+</footer>

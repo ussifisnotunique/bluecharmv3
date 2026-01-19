@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="{{ .Language.Lang }}">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/jpeg" href="/assets/bluecharm.jpeg" />
+
+    <!-- SEO Meta Tags -->
+    <title>{{ .Title }} | {{ site.Title }}</title>
+    <meta name="description" content="{{ .Description | default site.Params.description }}">
+    <meta name="keywords"
+        content="scuba diving hurghada, red sea scuba diving, hurghada scuba diving, best scuba diving hurghada, hurghada diving center, red sea diving hurghada, scuba diving packages hurghada, book scuba diving hurghada, scuba diving for beginners hurghada, padi open water hurghada, wreck diving hurghada, reef diving red sea, boat diving hurghada, scuba diving egypt hurghada, diving holiday hurghada egypt, red sea diving egypt, hurghada scuba near me">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="author" content="Bluecharm Diving Center">
+    <meta name="publisher" content="Bluecharm Diving Center">
+    <meta name="geo.region" content="EG-BA">
+    <meta name="geo.placename" content="Hurghada">
+    <meta name="geo.position" content="27.2579;33.8116">
+    <meta name="ICBM" content="27.2579, 33.8116">
+
+    <!-- Canonical & Alternate Links -->
+    <link rel="canonical" href="{{ .Permalink }}" />
+    {{ range .AllTranslations }}
+    <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" />
+    {{ end }}
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{ .Title }} – Red Sea Diving Trips & PADI Courses" />
+    <meta property="og:description" content="{{ .Description | default site.Params.description }}" />
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=2070&auto=format&fit=crop" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="{{ .Language.Lang }}_{{ upper .Language.Lang }}">
+    <meta property="og:site_name" content="{{ site.Title }}">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Bluecharm Scuba Diving Hurghada | Professional Diving Courses & Trips" />
+    <meta name="twitter:description"
+        content="Book scuba diving Hurghada with Bluecharm diving center. Professional PADI diving courses, snorkeling trips, Red Sea diving adventures in Egypt." />
+    <meta name="twitter:image"
+        content="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=2070&auto=format&fit=crop" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "{{ site.Params.business.name }}",
+        "description": "Bluecharm diving center Hurghada offers professional scuba diving, snorkeling, and PADI courses in the Red Sea Egypt.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Hurghada",
+            "addressCountry": "EG"
+        },
+        "telephone": "{{ site.Params.contact.phone }}",
+        "email": "{{ site.Params.contact.email }}",
+        "url": "{{ .Site.BaseURL }}",
+        "sameAs": [
+            "{{ site.Params.business.facebook }}",
+            "{{ site.Params.business.instagram }}"
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Diving Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Scuba Diving Trips",
+                        "description": "Snorkeling, introduction dives, professional dives, turtle trips, dolphin house"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Diving Courses",
+                        "description": "PADI Open Water, Advanced, Rescue, Divemaster, Nitrox, Deep Diver, Bubblemaker"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    {{ partial "header.html" . }}
+
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    {{ partial "footer.html" . }}
+
+    <!-- JavaScript -->
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
